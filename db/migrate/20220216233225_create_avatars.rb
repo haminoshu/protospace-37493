@@ -1,6 +1,6 @@
-class CreatePrototypes < ActiveRecord::Migration[6.0]
+class CreateAvatars < ActiveRecord::Migration[6.0]
   def change
-    create_table :prototypes do |t|
+    create_table :avatars do |t|
       t.string :title,              null: false, default: ""
       t.text :catch_copy, null: false
       t.text :concept, null: false

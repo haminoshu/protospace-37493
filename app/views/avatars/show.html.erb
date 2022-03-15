@@ -1,39 +1,39 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-        <%= @prototype.title %>
+    <div class="avatar__wrapper">
+      <p class="avatar__hedding">
+        <%= @avatar.title %>
       </p>
-      <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user.id), class: :prototype__user %>
+      <%= link_to "by #{@avatar.user.name}", user_path(@avatar.user.id), class: :avatar__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_prototype_path(@prototype), method: :get, class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
+      <% if user_signed_in? && current_user.id == @avatar.user_id %>
+        <div class="avatar__manage">
+          <%= link_to "編集する", edit_avatar_path(@avatar), method: :get, class: :avatar__btn %>
+          <%= link_to "削除する", avatar_path(@avatar), method: :delete, class: :avatar__btn %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
-        <%= image_tag(@prototype.image) %>
+      <div class="avatar__image">
+        <%= image_tag(@avatar.image) %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="avatar__body">
+        <div class="avatar__detail">
           <p class="detail__title">キャッチコピー</p>
           <p class="detail__message">
-            <%= @prototype.catch_copy %>
+            <%= @avatar.catch_copy %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="avatar__detail">
           <p class="detail__title">コンセプト</p>
           <p class="detail__message">
-            <%= @prototype.concept %>
+            <%= @avatar.concept %>
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="avatar__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <% if user_signed_in? %>
-            <%= form_with(model: [@prototype, @comment], local: true) do |f|%>
+            <%= form_with(model: [@avatar, @comment], local: true) do |f|%>
               <div class="field">
                 <%= f.label :comment, "コメント" %><br />
                 <%= f.text_field :comment, id:"comment_content" %>

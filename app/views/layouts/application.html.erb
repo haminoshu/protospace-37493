@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProtoSpace</title>
+    <title>らくらく職業体験</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,13 +15,14 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to image_tag("rakuraku.png", class: :logo), root_path %>
+            <%= image_tag "logoimage.png", class: :logoimage %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
             <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
+              <%= link_to image_tag("logout.png", class: :semilogo), destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to image_tag("job.png", class: :semilogo), new_avatar_path, class: :nav__btn %>
             </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
@@ -37,7 +38,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">Copyright © JUNKO TAKANO All rights reserved.</p>
     </footer>
   </body>
 </html>
