@@ -17,7 +17,8 @@ div {
 
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
+  color: #42433b;
+  background-color: #f4fae7;
 }
 
 li {
@@ -25,7 +26,7 @@ li {
 }
 
 img {
-  max-width: 100%;
+  max-width: 70%;
   vertical-align: bottom;
 }
 
@@ -37,7 +38,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #d3c058;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -52,16 +53,24 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 400px;
+  margin-bottom: 10px;
+}
+.logoimage {
+  width: 50px;
+}
+.semilogo {
+  width: 160px;
+  margin-top: 10px;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
+  font-size: 1.2em;
+  /* color: #8a5506; */
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  /* border: 2px #87CEFA solid; */
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -73,10 +82,11 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
+  font-size: 1.2em;
+  /* color: #8a5506; */
   text-decoration: none;
   user-select: none;
+  /* border: 2px #87CEFA solid; */
 }
 .nav__logout:hover{
   opacity: 0.5;
@@ -106,7 +116,7 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
+  background: #87fa8d;
   border: 1px #87CEFA solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
@@ -124,7 +134,7 @@ a {
   margin-bottom: 20px;
 }
 .greeting__link{
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .page-heading {
   font-size: 30px;
@@ -162,27 +172,27 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.avatar__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.avatar__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.avatar__user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.avatar__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.avatar__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -192,12 +202,12 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.avatar__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+.avatar__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -209,12 +219,12 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.avatar__btn:hover{
   color: #fff;
   background: #999;
 }
 
-.prototype__comments{
+.avatar__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -269,7 +279,8 @@ a {
 /* フッター */
 
 .footer {
-  background-color: #999;
+  background-color: #d3c058;
+  9;
   padding: 10px 0;
 }
 .copyright {
@@ -291,7 +302,7 @@ a {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .avatar_image{
     width: 60%;
   }
 }
@@ -314,7 +325,7 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .avatar_image{
     width: 100%;
   }
   .table{

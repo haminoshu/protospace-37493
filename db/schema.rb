@@ -33,24 +33,24 @@ ActiveRecord::Schema.define(version: 2022_02_20_093203) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comment", null: false
-    t.bigint "user_id"
-    t.bigint "prototype_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["prototype_id"], name: "index_comments_on_prototype_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "prototypes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "avatars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.text "catch_copy", null: false
     t.text "concept", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_prototypes_on_user_id"
+    t.index ["user_id"], name: "index_avatars_on_user_id"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment", null: false
+    t.bigint "user_id"
+    t.bigint "avatar_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["avatar_id"], name: "index_comments_on_avatar_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_093203) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "prototypes"
+  add_foreign_key "avatars", "users"
+  add_foreign_key "comments", "avatars"
   add_foreign_key "comments", "users"
-  add_foreign_key "prototypes", "users"
 end
